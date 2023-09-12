@@ -3,37 +3,61 @@
 #include "lists.h"
 
 /**
- * is_palindrome_recursive - recursively checks if a list is a palindrome
- * @left: left pointer
- * @right: right pointer
- * Return: 1 if palindrome, 0 otherwise
+ * is_palindrome - checks if a singly linked list is a palindrome
+ * @head: pointer to the head of the linked list
+ * Return: 0 if not a palindrome, 1 if a palindrome
  */
-int is_palindrome_recursive(listint_t **left, listint_t *right)
+int is_palindrome(listint_t **head)
 {
-    if (right == NULL)
-        return (1);
+    listint_t *slow = *head, *fast = *head;
+    listint_t *prev = NULL, *temp, *second_half = NULL;
+    int is_palindrome = 1; // Assume it's a palindrome by default
 
-    int is_palindrome = is_palindrome_recursive(left, right->next);
+    if (*head == NULL || (*head)->next == NULL)
+        return (1); // Empty list or single element is a palindrome
 
-    if (!is_palindrome)
-        return (0);
+    // Find the middle of the list using slow and fast pointers
+    while (fast && fast->next)
+    {
+        fast = fast->next->next;
+        temp = slow;
+        slow = slow->next;
+    }
 
-    is_palindrome = ((*left)->n == right->n);
+    // If the list has an odd number of elements, ignore the middle element
+    if (fast)
+    {
+        second_half = slow->next;
+        slow->next = NULL;
+    }
+    else
+    {
+        second_half = slow;
+    }
 
-    *left = (*left)->next;
+    // Reverse the second half of the list
+    while (second_half)
+    {
+        temp = second_half->next;
+        second_half->next = prev;
+        prev = second_half;
+        second_half = temp;
+    }
+
+    second_half = prev; // New head of the reversed second half
+
+    // Compare the first half and reversed second half
+    while (second_half)
+    {
+        if ((*head)->n != second_half->n)
+        {
+            is_palindrome = 0;
+            break;
+        }
+        *head = (*head)->next;
+        second_half = second_half->next;
+    }
 
     return (is_palindrome);
 }
 
-/**
- * is_palindrome - checks if a singly linked list is a palindrome
- * @head: pointer to the head of the linked list
- * Return: 1 if palindrome, 0 otherwise
- */
-int is_palindrome(listint_t **head)
-{
-    if (head == NULL || *head == NULL)
-        return (1);
-
-    return (is_palindrome_recursive(head, *head));
-}
