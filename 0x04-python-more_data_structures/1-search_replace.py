@@ -12,4 +12,3 @@ def search_replace(my_list, search, replace):
         else:
             newlist.append(element)
     return newlist
-
