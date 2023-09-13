@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
 
-    newlist = list()
+    newlist = []
+
     for element in my_list:
 
         if element == search:
@@ -9,5 +10,5 @@ def search_replace(my_list, search, replace):
         else:
             newlist.append(element)
 
-    return(newlist)
+    return newlist
 
