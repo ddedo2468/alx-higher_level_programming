@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def safe_print_division(a, b):
-   """divide 2 numbers safly"""
+    """divide 2 numbers safly"""
     try:
         result = a/b
 
