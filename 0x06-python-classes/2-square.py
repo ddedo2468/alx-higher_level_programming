@@ -4,7 +4,7 @@
 
 class Square:
     """ this is a class that presents a square"""
-    def __init__(self, size):
+    def __init__(self, size=0):
         """ this is the contructor of the class
         it has 1 arg size"""
 
