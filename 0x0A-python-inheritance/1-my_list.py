@@ -8,7 +8,6 @@ class MyList(list):
         """ the constructor """
         super().__init__()
 
-
     def print_sorted(self):
         """ printing a sorted list """
         print sorted(self)
