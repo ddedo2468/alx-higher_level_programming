@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-"""
-myList Module documentatiom
-"""
+
+"""Module for my_list class"""
 
 
 class MyList(list):
-    """a subclass of list"""
-    def __init__(self):
-        """class constructor the object"""
-        super().__init__()
+    """Class that inherits from list"""
 
     def print_sorted(self):
-        """prints a sorted list"""
-        print(sorted(self))
+        """Prints the list, but sorted (ascending sort)"""
+        print(sorted(list(self)))
