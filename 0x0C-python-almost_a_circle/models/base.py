@@ -2,6 +2,7 @@
 """ python module parent """
 import json
 
+
 class Base():
     """ class definition """
     __nb_objects = 0

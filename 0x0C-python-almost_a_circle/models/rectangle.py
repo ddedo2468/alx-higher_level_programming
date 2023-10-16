@@ -48,6 +48,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -79,7 +80,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ over riding for better string """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id,
                 self.x,
                 self.y,
                 self.width,

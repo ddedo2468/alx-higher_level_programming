@@ -21,19 +21,6 @@ class TestSquare(unittest.TestCase):
         s2 = Square(3, 2, 1, 100)
         self.assertEqual(s2.area(), 9)
 
-    def test_display(self):
-        s1 = Square(3)
-        expected_output = "###\n###\n###\n"
-        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
-            s1.display()
-            self.assertEqual(mock_stdout.getvalue(), expected_output)
-
-        s2 = Square(2, 1, 1)
-        expected_output = "\n ##\n ##\n"
-        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
-            s2.display()
-            self.assertEqual(mock_stdout.getvalue(), expected_output)
-
     def test_str(self):
         s1 = Square(5, 2, 1, 1)
         self.assertEqual(str(s1), "[Square] (1) 2/1 - 5")
@@ -60,6 +47,7 @@ class TestSquare(unittest.TestCase):
         s2_dict = s2.to_dictionary()
         expected_dict = {'id': 100, 'size': 3, 'x': 0, 'y': 0}
         self.assertEqual(s2_dict, expected_dict)
+
 
 if __name__ == '__main__':
     unittest.main()

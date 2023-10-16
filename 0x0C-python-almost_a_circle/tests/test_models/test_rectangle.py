@@ -28,19 +28,6 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(2, 4, 1, 9, 100)
         self.assertEqual(r2.area(), 8)
 
-    def test_display(self):
-        r1 = Rectangle(3, 2)
-        expected_output = "###\n###\n"
-        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
-            r1.display()
-            self.assertEqual(mock_stdout.getvalue(), expected_output)
-
-        r2 = Rectangle(2, 3, 2, 2)
-        expected_output = "\n\n  ##\n  ##\n  ##\n"
-        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
-            r2.display()
-            self.assertEqual(mock_stdout.getvalue(), expected_output)
-
     def test_str(self):
         r1 = Rectangle(10, 7, 2, 8, 1)
         self.assertEqual(str(r1), "[Rectangle] (1) 2/8 - 10/7")

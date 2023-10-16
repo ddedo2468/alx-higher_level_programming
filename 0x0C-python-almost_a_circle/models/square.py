@@ -1,5 +1,7 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """ defines Square class """
+
+
 from models.rectangle import Rectangle
 
 
