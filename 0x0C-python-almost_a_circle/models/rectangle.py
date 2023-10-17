@@ -87,8 +87,8 @@ class Rectangle(Base):
                 self.width,
                 self.height)
 
-    def update(self):
-        """ update the args """
+    def update(self, *args, **kwargs):
+        """ Update Rectangle """
         if args and len(args) != 0:
             ar = 0
             for arg in args:
