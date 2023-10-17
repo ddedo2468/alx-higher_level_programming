@@ -89,14 +89,39 @@ class Rectangle(Base):
 
     def update(self):
         """ update the args """
-        if args:
-            attrs = ["id", "width", "height", "x", "y"]
-            for i in range(len(args)):
-                setattr(self, attrs[i], args[i])
-        else:
-            for key, value in kwargs.items():
-                if key in ["id", "width", "height", "x", "y"]:
-                    setattr(self, key, value)
+        if args and len(args) != 0:
+            ar = 0
+            for arg in args:
+                if ar == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif ar == 1:
+                    self.width = arg
+                elif ar == 2:
+                    self.height = arg
+                elif ar == 3:
+                    self.x = arg
+                elif ar == 4:
+                    self.y = arg
+                ar += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def to_dictionary(self):
         """ return dictionary of Rectangle """
