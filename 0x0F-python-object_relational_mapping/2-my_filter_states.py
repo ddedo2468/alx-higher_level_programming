@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cursor = conn.cursor()
 
     cursor.execute("""SELECT * FROM states
-                   WHERE name LIKE '{}' """.format(sys.argv[4]))
+                   WHERE name LIKE BINARY '{}' """.format(sys.argv[4]))
 
     rows = cursor.fetchall()
     for row in rows:
