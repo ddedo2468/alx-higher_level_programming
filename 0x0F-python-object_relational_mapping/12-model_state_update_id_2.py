@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-prints the State object with the name passed as argument from the database
+script that changes the name of a State object from the database hbtn_0e_6_usa
+Change the name of the State where id = 2 to New Mexico
 """
 
 import sys

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-prints the State object with the name passed as argument from the database
+script 14-model_city_fetch_by_state.py that prints
+all City objects from the database hbtn_0e_14_usa.
+Results must be sorted in ascending order by cities.id
 """
 
 import sys

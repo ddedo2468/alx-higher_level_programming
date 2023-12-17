@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-prints the State object with the name passed as argument from the database
+script that prints the State object with the name passed as argument
+from the database hbtn_0e_6_usa
+Results must display the states.id
+If no state has the name you searched for, display Not found
 """
 
 import sys

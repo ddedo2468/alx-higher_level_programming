@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-prints the first State object from the database hbtn_0e_6_usa
+script that prints the first State object from the database hbtn_0e_6_usa
+The state you display must be the first in states.id
+If the table states is empty, print Nothing followed by a new line
 """
 
 import sys
