@@ -19,4 +19,3 @@ if __name__ == "__main__":
                 commit[i].get("commit").get("author").get("name")))
     except IndexError:
         pass
-
